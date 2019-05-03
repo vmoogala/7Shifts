@@ -1,0 +1,22 @@
+{
+  "name": "7shifts",
+  "version": "1.0.0",
+  "description": "String Calculator",
+  "main": "stringCalculator.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmoogala/7Shifts.git"
+  },
+  "author": "Vamshi Moogala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vmoogala/7Shifts/issues"
+  },
+  "homepage": "https://github.com/vmoogala/7Shifts#readme",
+  "devDependencies": {
+    "jest": "^24.7.1"
+  }
+}
