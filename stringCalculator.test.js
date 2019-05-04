@@ -33,3 +33,11 @@ test("calculating 2 + 3 + 8 with custom delimeter @ will result 13", () => {
 test("delimiters can be of length greater than 1", () => {
   expect(add("//***\n1***2***3")).toBe(6);
 });
+
+test("allow for multiple delimiters", () => {
+  expect(add("//$,@\n1$2@3")).toBe(6);
+});
+
+test("multiple delimiters with multiple length", () => {
+  expect(add("//$,**,@@@\n1$2**3@@@4")).toBe(10);
+});
