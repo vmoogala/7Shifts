@@ -1,5 +1,6 @@
 const add = function(input) {
   let sum = 0;
+  let numbersArr = [];
 
   if (input.length === 0) {
     return 0;
@@ -13,23 +14,24 @@ const add = function(input) {
 
   if (delimiter.split(",").length === 1) {
     // When there is only one delimiter
-    input = input.split(delimiter);
+    numbersArr = input.split(delimiter);
   } else {
     // More than one delimiters
-    delimiter = delimiter.split(",");
+    const delimitersArray = delimiter.split(",");
 
     // Replacing all delimiters in input with a special character. ',' for now
-    // We use it later to seperate delimiters and the text
-    for (let i = 0; i < delimiter.length; i++) {
-      input = input.replace(delimiter[i], ",");
-    }
+    // We use it later to separate delimiters and the text
+    delimitersArray.forEach(delim => {
+      input = input.replace(delim, ",");
+    });
 
-    input = input.split(",");
+    numbersArr = input.split(",");
   }
 
   // Here input is an array of text seperated from delimiters
-  for (let i = 0; i < input.length; i++) {
-    const num = parseInt(input[i]);
+  numbersArr.forEach(d => {
+    const num = parseInt(d);
+
     if (num < 0) {
       throw new Error("Negatives not allowed " + num);
     }
@@ -38,7 +40,7 @@ const add = function(input) {
     if (num && num <= 1000) {
       sum += num;
     }
-  }
+  });
 
   return sum;
 };
