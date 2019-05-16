@@ -12,7 +12,7 @@ const add = function(input) {
   // Seperating the input text from delimiter
   input = input.substring(input.indexOf("\n") + 1);
 
-  if (delimiter.split(",").length === 1) {
+  if (delimiter.length === 1) {
     // When there is only one delimiter
     numbersArr = input.split(delimiter);
   } else {
@@ -22,7 +22,7 @@ const add = function(input) {
     // Replacing all delimiters in input with a special character. ',' for now
     // We use it later to separate delimiters and the text
     delimitersArray.forEach(delim => {
-      input = input.replace(delim, ",");
+      input = input.split(delim).join(",");
     });
 
     numbersArr = input.split(",");

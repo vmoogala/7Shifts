@@ -39,5 +39,5 @@ test("allow for multiple delimiters", () => {
 });
 
 test("multiple delimiters with multiple length", () => {
-  expect(add("//$,**,@@@\n1$2**3@@@4")).toBe(10);
+  expect(add("//$,**,@@@\n1$2**3@@@4$5**6@@@7")).toBe(28);
 });
